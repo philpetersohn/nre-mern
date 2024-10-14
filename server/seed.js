@@ -4,18 +4,18 @@ import { db } from "./libs/dbConnect.js";
 
 const users = [
   {
-    username: "nathan121",
-    email: "nathan@mail.com",
+    username: "philpeter",
+    email: "philpeter@mail.com",
     password: "$2b$10$vD5yRWdxLp1j6riuSi/Ozu71x145viXeGC7AHT5R0WcycGalmYTae",
-    avatar: "https://g.codewithnathan.com/default-user.png",
+    avatar: "",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   },
   {
-    username: "jane78",
-    email: "jane@mail.com",
+    username: "leahmerkel",
+    email: "leahmerkel@mail.com",
     password: "$2b$10$vD5yRWdxLp1j6riuSi/Ozu71x145viXeGC7AHT5R0WcycGalmYTae",
-    avatar: "https://g.codewithnathan.com/default-user.png",
+    avatar: "",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   },
