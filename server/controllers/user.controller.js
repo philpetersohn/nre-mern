@@ -1,12 +1,8 @@
 import { db } from "../libs/dbConnect.js";
 import { ObjectId } from "mongodb";
+import bcrypt from "bcrypt";
 
 const collection = db.collection("users");
-
-export const test = async (req, res) => {
-  let results = await collection.find({}).toArray();
-  res.status(200).json(results);
-};
 
 export const getUser = async (req, res, next) => {
   try {
@@ -28,7 +24,7 @@ export const updateUser = async (req, res, next) => {
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }
-    const query = { _id: new ObjectId(req.params.id) };
+    const query = { _id: ObjectId(req.params.id) };
     const data = {
       $set: {
         ...req.body,
@@ -49,7 +45,7 @@ export const updateUser = async (req, res, next) => {
 
 export const deleteUser = async (req, res, next) => {
   try {
-    const query = { _id: new ObjectId(req.params.id) };
+    const query = { _id: ObjectId(req.params.id) };
     await collection.deleteOne(query);
     res.status(200).json({ message: "User has been deleted!" });
   } catch (error) {
