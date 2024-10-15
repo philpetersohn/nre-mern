@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Toaster } from "react-hot-toast";
+
+import Home from "./pages/Home";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
-  const [isVisible, setIsVisible] = useState(true);
-
-  const toggleDiv = () => {
-    setIsVisible(!isVisible);
-  };
-
   return (
-    <div>
-      {isVisible && (
-        <div id="myDiv">
-          <p>Hello World!</p>
-        </div>
-      )}
-      <button onClick={toggleDiv}>Toggle Div</button>
-    </div>
+    <ChakraProvider>
+      <BrowserRouter>
+        <Toaster />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </ChakraProvider>
   );
 }
 
