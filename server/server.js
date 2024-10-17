@@ -27,6 +27,7 @@ app.use("*", (req, res) => {
   res.status(404).json({ message: "not found" });
 });
 
+
 app.use(errorHandler);
 
 app.listen(PORT, () => {

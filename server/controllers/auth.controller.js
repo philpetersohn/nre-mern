@@ -22,7 +22,7 @@ export const signup = async (req, res, next) => {
       username,
       email,
       password: hashedPassword,
-      avatar: "https://g.codewithnathan.com/default-user.png",
+      avatar: "",
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
