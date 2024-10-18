@@ -1,9 +1,10 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
+import { useLocalStorage } from "../util";
 
 const UserContext = createContext();
 
 const UserProvider = (props) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useLocalStorage("taskly", null);
 
   const updateUser = (user) => {
     setUser(user);
@@ -15,6 +16,7 @@ const UserProvider = (props) => {
   };
 
   return (
+    // eslint-disable-next-line react/prop-types
     <UserContext.Provider value={value}>{props.children}</UserContext.Provider>
   );
 };
