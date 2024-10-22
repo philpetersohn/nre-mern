@@ -23,7 +23,7 @@ export default function DeleteConfirmation({
           </AlertDialogHeader>
 
           <AlertDialogBody>
-            Are you sure? You can't undo this action.
+            Are you sure? You can nott undo this action.
           </AlertDialogBody>
 
           <AlertDialogFooter>
