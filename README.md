@@ -1,1 +1,1 @@
-Mern Stack Task Management App
+I build a full stack app with the MERN Stack. I have a good understanding at frontend development but I want to get better in backend development. I used express, node and mongodb for my backend. Feel free to give me some tips or leave comments. 
